@@ -17,7 +17,7 @@ package com.oliver.lesson2;
 public class MyArray {
 
     // member variables
-    int[] myArr;
+    private int[] myArr;
     
     /**
      * main method that calls other methods

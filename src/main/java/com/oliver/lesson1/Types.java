@@ -17,11 +17,11 @@ package com.oliver.lesson1;
 public class Types {
 
     // member variables
-    int myInteger;
-    double myDouble;
-    float myFloat;
-    char myChar;
-    boolean myBoolean;
+    private int myInteger;
+    private double myDouble;
+    private float myFloat;
+    private char myChar;
+    private boolean myBoolean;
 
     /**
      * main method that calls other methods
