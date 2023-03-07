@@ -17,25 +17,28 @@ import java.util.*;
 
 public class MyMap {
 
-    // Member Variables
-    private Map<String, String> thisStatesMap;
-    private Map<String, String> thisAscendingMap;
-    private Map<String, String> thisDescendingMap;
-
     /**
-     * main method that calls other methods
+     * main method
      * @param args
      */
     public static void main(String[] args) {
         MyMap thisMap = new MyMap();
+        thisMap.go(thisMap);
+    }
+
+    /**
+     * control method that calls other methods
+     * @param thisInstance: the current instance of MyMap
+     */
+    public void go(MyMap thisInstance) {
         // generate the map
-        thisMap.thisStatesMap = thisMap.generateMap();
+        Map<String, String> thisStatesMap = thisInstance.generateMap();
         // sort the map in ascending order and print
-        thisMap.thisAscendingMap = thisMap.ascendingOrder(thisMap.thisStatesMap);
-        thisMap.printMap(thisMap.thisAscendingMap);
+        Map<String, String> thisAscendingMap = thisInstance.ascendingOrder(thisStatesMap);
+        thisInstance.printMap(thisAscendingMap);
         // sort the map in descending order and print
-        thisMap.thisDescendingMap = thisMap.descendingOrder(thisMap.thisStatesMap);
-        thisMap.printMap(thisMap.thisDescendingMap);
+        Map<String, String> thisDescendingMap = thisInstance.descendingOrder(thisStatesMap);
+        thisInstance.printMap(thisDescendingMap);
     }
 
     /**
@@ -43,7 +46,6 @@ public class MyMap {
      * @return a map of states
      */
     public Map<String, String> generateMap() {
-
         //Create an object of state/abbreviation
         String[][] myStates = {{"Alabama", "AL"}, {"Alaska", "AK"}, {"Arizona", "AZ"}, {"Arkansas", "AR"}, {"California", "CA"}, {"Colorado", "CO"}, {"Connecticut", "CN"}, {"Delaware", "DE"}, {"Florida", "FL"}, {"Georgia", "GA"},
             {"Hawaii", "HI"}, {"Idaho", "ID"}, {"Illinois", "IL"}, {"Indiana", "IN"}, {"Iowa", "IA"}, {"Kansas", "KS"}, {"Kentucky", "KY"}, {"Louisiana", "LA"}, {"Maine", "ME"}, {"Maryland", "MD"}, {"Massachusetts", "MA"}, {"Michigan", "MI"},
@@ -51,7 +53,6 @@ public class MyMap {
             {"North Dakota", "ND"}, {"Ohio", "OH"}, {"Oklahoma", "OK"}, {"Oregon", "OR"}, {"Pennsylvania", "PA"}, {"Rhode Island", "RI"}, {"South Carolina", "SC"} ,{"South Dakota", "SD"}, {"Tennessee", "TN"}, {"Texas", "TX"}, {"Utah", "UT"}, 
             {"Vermont", "VT"}, {"Virginia", "VA"}, {"Washington", "WA"}, {"West Virginia", "WV"}, {"Wisconsin", "WI"}, {"Wyoming", "WY"}
         };
-
         //Create a map using 'myStates'
         Map<String, String> statesMap = new HashMap<String, String>();
             for (int i=0; i<myStates.length; i++) {

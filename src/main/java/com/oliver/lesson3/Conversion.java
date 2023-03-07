@@ -17,22 +17,26 @@ import java.util.*;
 
 public class Conversion {
 
-    // member variables
-    private String[] thisArray;
-    private List<String> result;
-
     /**
-     * main method that calls other methods
+     * main method
      * @param args
      */
     public static void main(String[] args) {
         Conversion thisConversion = new Conversion();
+        thisConversion.go(thisConversion);
+    }
+    
+    /**
+     * control method that calls other methods
+     * @param thisInstance
+     */
+    public void go(Conversion thisInstance) {
         // create an array of strings
-        thisConversion.thisArray = thisConversion.createArray();
+    	String[] thisArray = thisInstance.createArray();
         // convert the array of strings to an List of strings
-        thisConversion.result = thisConversion.convertArray(thisConversion.thisArray);
+    	List<String> result = thisInstance.convertArray(thisArray);
         // print the result
-        thisConversion.printList(thisConversion.result);
+        thisInstance.printList(result);
     }
 
     /**

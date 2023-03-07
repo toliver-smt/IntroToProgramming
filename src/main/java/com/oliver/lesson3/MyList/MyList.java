@@ -17,22 +17,26 @@ import java.util.*;
 
 public class MyList {
 
-    // Member Variables
-    private List<Person> thisPersonList;
-    private List<Person> shuffledList;
-
     /**
-     * main method that calls other methods
+     * main method
      * @param args
      */
     public static void main(String[] args) {
         MyList thisList = new MyList();
-        // generate and print a list
-        thisList.thisPersonList = thisList.generateList();
-        thisList.printList(thisList.thisPersonList);
+        thisList.go(thisList);
+    }
+    
+    /**
+     * control method that calls other methods
+     * @param thisInstance
+     */
+    public void go(MyList thisInstance) {
+    	// generate and print a list
+    	List<Person> thisPersonList = thisInstance.generateList();
+        thisInstance.printList(thisPersonList);
         // shuffle and print a list
-        thisList.shuffledList = thisList.shuffleList(thisList.thisPersonList);
-        thisList.printList(thisList.shuffledList);
+        List<Person> shuffledList = thisInstance.shuffleList(thisPersonList);
+        thisInstance.printList(shuffledList);
     }
 
     /**
@@ -46,7 +50,6 @@ public class MyList {
         Person p3 = new Person(3, "Magnus", "Carlson");
         Person p4 = new Person(4, "Bobby", "Fischer");
         Person p5 = new Person(5, "Hikaru", "Nakamura");
-
         // Create an ArrayList and add the Person objects
         List<Person> data = new ArrayList<>(5);
         data.add(p1);
@@ -54,12 +57,11 @@ public class MyList {
         data.add(p3);
         data.add(p4);
         data.add(p5);
-
         return data;
     }
 
     /**
-     * 
+     * shuffle a list
      * @param personList: a List of Person Objects
      * @return a shuffled List of Person Objects
      */
