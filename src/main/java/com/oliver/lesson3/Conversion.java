@@ -28,15 +28,11 @@ public class Conversion {
     
     /**
      * control method that calls other methods
-     * @param thisInstance
+     * @param x: current instance
      */
-    public void go(Conversion thisInstance) {
-        // create an array of strings
-    	String[] thisArray = thisInstance.createArray();
-        // convert the array of strings to an List of strings
-    	List<String> result = thisInstance.convertArray(thisArray);
-        // print the result
-        thisInstance.printList(result);
+    public void go(Conversion x) {
+    	//create an array, convert that array, print the result
+        x.printList(x.convertArray(x.createArray()));
     }
 
     /**

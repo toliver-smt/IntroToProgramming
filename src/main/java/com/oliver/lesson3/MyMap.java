@@ -28,17 +28,15 @@ public class MyMap {
 
     /**
      * control method that calls other methods
-     * @param thisInstance: the current instance of MyMap
+     * @param x: the current instance of MyMap
      */
-    public void go(MyMap thisInstance) {
+    public void go(MyMap x) {
         // generate the map
-        Map<String, String> thisStatesMap = thisInstance.generateMap();
+        Map<String, String> thisStatesMap = x.generateMap();
         // sort the map in ascending order and print
-        Map<String, String> thisAscendingMap = thisInstance.ascendingOrder(thisStatesMap);
-        thisInstance.printMap(thisAscendingMap);
+        x.printMap(x.ascendingOrder(thisStatesMap));
         // sort the map in descending order and print
-        Map<String, String> thisDescendingMap = thisInstance.descendingOrder(thisStatesMap);
-        thisInstance.printMap(thisDescendingMap);
+        x.printMap(x.descendingOrder(thisStatesMap));
     }
 
     /**

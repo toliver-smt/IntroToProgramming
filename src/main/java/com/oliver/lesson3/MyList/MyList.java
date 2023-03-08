@@ -28,15 +28,15 @@ public class MyList {
     
     /**
      * control method that calls other methods
-     * @param thisInstance
+     * @param x
      */
-    public void go(MyList thisInstance) {
-    	// generate and print a list
-    	List<Person> thisPersonList = thisInstance.generateList();
-        thisInstance.printList(thisPersonList);
+    public void go(MyList x) {
+    	// generate a list
+    	List<Person> thisPersonList = x.generateList();
+    	// print the list
+        x.printList(thisPersonList);
         // shuffle and print a list
-        List<Person> shuffledList = thisInstance.shuffleList(thisPersonList);
-        thisInstance.printList(shuffledList);
+        x.printList(x.shuffleList(thisPersonList));
     }
 
     /**
