@@ -1,6 +1,7 @@
+package com.oliver.lesson4;
 import java.io.*;
 
-public class Object1{
+public class Object1 {
 
     private String myFileName;
 
@@ -8,15 +9,14 @@ public class Object1{
         myFileName = fileName;
     }
 
-    public FileReader readFile() {
-        File inputFile = new File(myFileName);
-        FileReader in = new FileReader(inputFile);
-        return in;
+    public void readFile() throws IOException {
+        FileReader reader = new FileReader(myFileName);
+        int data = reader.read();
+        while(data != -1) {
+            System.out.print((char)data);
+            data = reader.read();
+        }
+        reader.close();
     }
 
-    public FileWriter writeFile() throws IOException{
-        File outputFile = new File("myFile.txt");
-        FileWriter out = new FileWriter(outputFile);
-        return out;
-    }
 }
