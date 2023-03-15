@@ -23,20 +23,20 @@ public class MyList {
      */
     public static void main(String[] args) {
         MyList thisList = new MyList();
-        thisList.go(thisList);
+        thisList.process();
     }
     
     /**
      * control method that calls other methods
      * @param x
      */
-    public void go(MyList x) {
+    public void process() {
     	// generate a list
-    	List<Person> thisPersonList = x.generateList();
+    	List<Person> thisPersonList = generateList();
     	// print the list
-        x.printList(thisPersonList);
+        printList(thisPersonList);
         // shuffle and print a list
-        x.printList(x.shuffleList(thisPersonList));
+        printList(shuffleList(thisPersonList));
     }
 
     /**

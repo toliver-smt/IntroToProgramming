@@ -8,7 +8,7 @@ package com.oliver.lesson1;
  * <b>Copyright:</b> Copyright (c) 2023<p/>
  * <b>Company:</b> Silicon Mountain Technologies<p/>
  * @author Tyler Oliver
- * @version 11.0.17
+ * @version 1.0
  * @since Feb 15, 2023
  * <b>Changes: </b>
  ****************************************************************************/
@@ -21,18 +21,20 @@ public class Loops {
      * @param args
      */
     public static void main(String[] args) {
-        // create an instance of the Loops class
         Loops obj = new Loops();
-        // call methods for obj
-        obj.myWhile();
-        obj.myFor();
-        obj.onlyEven();
+        obj.process();
     }
 
+    
+    public void process() {
+    	myWhile();
+    	myFor();
+    	onlyEven();
+    }
     /**
      * a while loop that prints values from 1-10
      */
-    void myWhile() {
+    public void myWhile() {
         int x = 1;
         System.out.print("myWhile() loop output: ");
         while(x<11) {
@@ -45,7 +47,7 @@ public class Loops {
     /**
      * a for loop that prints values from 10-1
      */
-    void myFor() {
+    public void myFor() {
         System.out.print("myFor() loop output: ");
         for(int x = 10; x>0; x--) {
             System.out.print(x + " ");
@@ -56,7 +58,7 @@ public class Loops {
     /**
      * a while loop that prints even values from 1-20
      */
-    void onlyEven() {
+    public void onlyEven() {
         int x = 2;
         System.out.print("onlyEven() output: ");
         while(x<21) {

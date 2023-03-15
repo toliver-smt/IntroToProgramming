@@ -16,13 +16,6 @@ package com.oliver.lesson1;
 // create class
 public class Types {
 
-    // member variables
-    private int myInteger;
-    private double myDouble;
-    private float myFloat;
-    private char myChar;
-    private boolean myBoolean;
-
     /**
      * main method that calls other methods
      * @param args
@@ -30,14 +23,6 @@ public class Types {
     public static void main(String[] args) {
         // create an instance of the Types class
         Types obj = new Types();
-
-        // initialize instance variables
-        obj.myInteger = 5;
-        obj.myDouble = 37.266D;
-        obj.myFloat = 52.67F;
-        obj.myChar = 't';
-        obj.myBoolean = true;
-
         // call printVals() for myObj
         obj.printVals();
     }
@@ -45,7 +30,13 @@ public class Types {
     /**
      * Prints the values to the console.
      */
-    void printVals() {
+    public void printVals() {
+        int myInteger = 5;
+        double myDouble = 37.266D;
+        float myFloat = 52.67F;
+        char myChar = 't';
+        boolean myBoolean = true;
+
         // print information for a specific instance to the console
         System.out.println("myInteger = " + myInteger);
         System.out.println("myDouble = " + myDouble);

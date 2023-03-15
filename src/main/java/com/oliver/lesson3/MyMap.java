@@ -23,20 +23,20 @@ public class MyMap {
      */
     public static void main(String[] args) {
         MyMap thisMap = new MyMap();
-        thisMap.go(thisMap);
+        thisMap.process();
     }
 
     /**
      * control method that calls other methods
      * @param x: the current instance of MyMap
      */
-    public void go(MyMap x) {
+    public void process() {
         // generate the map
-        Map<String, String> thisStatesMap = x.generateMap();
+        Map<String, String> thisStatesMap = generateMap();
         // sort the map in ascending order and print
-        x.printMap(x.ascendingOrder(thisStatesMap));
+        printMap(ascendingOrder(thisStatesMap));
         // sort the map in descending order and print
-        x.printMap(x.descendingOrder(thisStatesMap));
+        printMap(descendingOrder(thisStatesMap));
     }
 
     /**
@@ -44,18 +44,58 @@ public class MyMap {
      * @return a map of states
      */
     public Map<String, String> generateMap() {
-        //Create an object of state/abbreviation
-        String[][] myStates = {{"Alabama", "AL"}, {"Alaska", "AK"}, {"Arizona", "AZ"}, {"Arkansas", "AR"}, {"California", "CA"}, {"Colorado", "CO"}, {"Connecticut", "CN"}, {"Delaware", "DE"}, {"Florida", "FL"}, {"Georgia", "GA"},
-            {"Hawaii", "HI"}, {"Idaho", "ID"}, {"Illinois", "IL"}, {"Indiana", "IN"}, {"Iowa", "IA"}, {"Kansas", "KS"}, {"Kentucky", "KY"}, {"Louisiana", "LA"}, {"Maine", "ME"}, {"Maryland", "MD"}, {"Massachusetts", "MA"}, {"Michigan", "MI"},
-            {"Minnesota", "MN"}, {"Mississippi", "MS"}, {"Missouri", "MO"}, {"Montana", "MT"}, {"Nebraska", "NE"}, {"Nevada", "NV"}, {"New Hampshire", "NH"}, {"New Jersey", "NJ"}, {"New Mexico", "NM"}, {"New York", "NY"}, {"North Carolina", "NC"},
-            {"North Dakota", "ND"}, {"Ohio", "OH"}, {"Oklahoma", "OK"}, {"Oregon", "OR"}, {"Pennsylvania", "PA"}, {"Rhode Island", "RI"}, {"South Carolina", "SC"} ,{"South Dakota", "SD"}, {"Tennessee", "TN"}, {"Texas", "TX"}, {"Utah", "UT"}, 
-            {"Vermont", "VT"}, {"Virginia", "VA"}, {"Washington", "WA"}, {"West Virginia", "WV"}, {"Wisconsin", "WI"}, {"Wyoming", "WY"}
-        };
-        //Create a map using 'myStates'
+        //Create a map
         Map<String, String> statesMap = new HashMap<String, String>();
-            for (int i=0; i<myStates.length; i++) {
-                statesMap.put(myStates[i][0], myStates[i][1]);
-            }
+        statesMap.put("Alabama", "AL");
+        statesMap.put("Alaska", "AK");
+        statesMap.put("Arizona", "AZ");
+        statesMap.put("Arkansas", "AR");
+        statesMap.put("California", "CA");
+        statesMap.put("Colorado", "CO");
+        statesMap.put("Connecticut", "CN");
+        statesMap.put("Delaware", "DE");
+        statesMap.put("Florida", "FL");
+        statesMap.put("Georgia", "GA");
+        statesMap.put("Hawaii", "HI");
+        statesMap.put("Idaho", "ID");
+        statesMap.put("Illinois", "IL");
+        statesMap.put("Indiana", "IN");
+        statesMap.put("Iowa", "IA");
+        statesMap.put("Kansas", "KS");
+        statesMap.put("Kentucky", "KY");
+        statesMap.put("Louisiana", "LA");
+        statesMap.put("Maine", "ME");
+        statesMap.put("Maryland", "MD");
+        statesMap.put("Massachusetts", "MA");
+        statesMap.put("Michigan", "MI");
+        statesMap.put("Minnesota", "MN");
+        statesMap.put("Mississippi", "MS");
+        statesMap.put("Missouri", "MO");
+        statesMap.put("Montana", "MT");
+        statesMap.put("Nebraska", "NE");
+        statesMap.put("Nevada", "NV");
+        statesMap.put("New Hampshire", "NH");
+        statesMap.put("New Jersey", "NJ");
+        statesMap.put("New Mexico", "NM");
+        statesMap.put("New York", "NY");
+        statesMap.put("North Carolina", "NC");
+        statesMap.put("North Dakota", "ND");
+        statesMap.put("Ohio", "OH");
+        statesMap.put("Oklahoma", "OK");
+        statesMap.put("Oregon", "OR");
+        statesMap.put("Pennsylvania", "PA");
+        statesMap.put("Rhode Island", "RI");
+        statesMap.put("South Carolina", "SC");
+        statesMap.put("South Dakota", "SD");
+        statesMap.put("Tennessee", "TN");
+        statesMap.put("Texas", "TX");
+        statesMap.put("Utah", "UT");
+        statesMap.put("Vermont", "VT");
+        statesMap.put("Virginia", "VA");
+        statesMap.put("Washington", "WA");
+        statesMap.put("West Virginia", "WV");
+        statesMap.put("Wisconsin", "WI");
+        statesMap.put("Wyoming", "WY");
         return statesMap;
     }
 
@@ -87,6 +127,8 @@ public class MyMap {
      */
     public void printMap(Map<String, String> map) {
         System.out.println("~~~~~~~~~~~~~~~~");
-        System.out.println(map);
+        for (Map.Entry<String, String> entry : map.entrySet()) {
+            System.out.println(entry.getKey() + ":" + entry.getValue());
+        }
     }
 }

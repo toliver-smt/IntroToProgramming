@@ -15,9 +15,6 @@ package com.oliver.lesson2;
 
 // create class
 public class MyArray {
-
-    // member variables
-    private int[] myArr;
     
     /**
      * main method that calls other methods
@@ -26,23 +23,23 @@ public class MyArray {
     public static void main(String[] args) {
         // create an instance of the MyArray class
         MyArray newArray = new MyArray();
-        // initialize myArr to have 10 elements
-        newArray.myArr = new int[10];
         // call printArr method
-        newArray.printArr(newArray.myArr);
+        newArray.printArr();
     }
 
     /**
      * populate the array with random values
      * @param int[] arr
      */
-    void printArr(int[] arr) {
+    void printArr() {
+    	//Initialize the array size
+    	int[] myArr = new int[10];
         // loop through each element of the array
-        for(int i = 0; i<arr.length; i++) {
+        for(int i = 0; i<myArr.length; i++) {
             // assign a random integer from 1-100 to each element
-            arr[i] = (int)(Math.random() * 100);
+            myArr[i] = (int)(Math.random() * 100);
             // print the index and value to the console
-            System.out.println("index " + i + " : " + arr[i] + " ");
+            System.out.println("index " + i + " : " + myArr[i] + " ");
         }
     }
 }

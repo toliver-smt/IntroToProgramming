@@ -23,16 +23,16 @@ public class Conversion {
      */
     public static void main(String[] args) {
         Conversion thisConversion = new Conversion();
-        thisConversion.go(thisConversion);
+        thisConversion.process();
     }
     
     /**
      * control method that calls other methods
      * @param x: current instance
      */
-    public void go(Conversion x) {
+    public void process() {
     	//create an array, convert that array, print the result
-        x.printList(x.convertArray(x.createArray()));
+        printList(convertArray(createArray()));
     }
 
     /**
