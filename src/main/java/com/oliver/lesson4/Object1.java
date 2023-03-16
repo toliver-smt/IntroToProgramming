@@ -15,7 +15,7 @@ import java.io.*;
 
 public class Object1 {
 	
-	//create an instance variable that will hold the file name
+	//member variables
     private String myFileName;
     private String fileText = "";
     
@@ -28,8 +28,7 @@ public class Object1 {
     }
     
     /**
-     * reads a file and converts it to upper case
-     * @return a string that represents the file that was read
+     * reads a file and converts it to upper case, Initializes 'fileText'
      * @throws IOException
      */
     public void readFile() throws IOException {
@@ -43,12 +42,12 @@ public class Object1 {
     }
     
     /**
-     * writes the file to the given file path
+     * writes the data from 'fileText' to the given file path
      * @throws IOException
      */
     public void writeUpperCaseFile() throws IOException {
         fileText = fileText.toUpperCase();
-    	File outputFile = new File("/home/tyler/eclipse-workspace/IntroToProgramming/src/main/java/com/oliver/lesson4/test.txt");
+    	File outputFile = new File("src/main/java/com/oliver/lesson4/resources/test.txt");
     	FileWriter writer = new FileWriter(outputFile);
     	writer.write(fileText);
     	writer.close();

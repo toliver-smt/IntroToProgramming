@@ -20,7 +20,7 @@ public class Object2 {
      * @throws IOException
      */
     public static void main(String[] args) throws IOException {
-        Object1 x = new Object1("/home/tyler/eclipse-workspace/IntroToProgramming/src/main/java/com/oliver/lesson4/fileOne.txt");
+        Object1 x = new Object1("src/main/java/com/oliver/lesson4/resources/fileOne.txt");
         x.readFile();
         x.writeUpperCaseFile();
     }
