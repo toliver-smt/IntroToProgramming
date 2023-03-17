@@ -15,9 +15,8 @@ import java.io.*;
 
 public class Object1 {
 	
-	//member variables
+	//member variable
     private String myFileName;
-    private String fileText = "";
     
     /**
      * create a constructor that accepts a file name and initializes 'myFileName'
@@ -28,24 +27,28 @@ public class Object1 {
     }
     
     /**
-     * reads a file and converts it to upper case, Initializes 'fileText'
+     * reads a text file and return's a string of its content
+     * @return
      * @throws IOException
      */
-    public void readFile() throws IOException {
+    public String readFile() throws IOException {
     	File inputFile = new File(myFileName);
         FileReader reader = new FileReader(inputFile);
+        String fileText = "";
         int c;
         while((c = reader.read()) != -1) {
             fileText += ((char)c);
         }
         reader.close();
+        return fileText;
     }
     
     /**
-     * writes the data from 'fileText' to the given file path
+     * Converts a String to upper case and writes it to a new file
+     * @param fileText
      * @throws IOException
      */
-    public void writeUpperCaseFile() throws IOException {
+    public void writeUpperCaseFile(String fileText) throws IOException {
         fileText = fileText.toUpperCase();
     	File outputFile = new File("src/main/java/com/oliver/lesson4/resources/test.txt");
     	FileWriter writer = new FileWriter(outputFile);
