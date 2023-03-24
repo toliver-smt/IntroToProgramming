@@ -21,7 +21,7 @@ public class SocketManager {
 			out = new DataOutputStream(socket.getOutputStream());
 			inputStreamReader = new InputStreamReader(socket.getInputStream());
 			in = new BufferedReader(inputStreamReader);
-			out.writeBytes("GET /\n");
+			out.writeBytes("GET /\r\n");
 			String inData = null;
 			while((inData = in.readLine()) != null) {
 				html.append(inData);

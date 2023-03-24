@@ -10,7 +10,7 @@ public class Server {
 	
 	public void process(String address, int port) {
 		SocketManager sm = new SocketManager();
-		sm.startServerSocket(port);
+		//sm.startServerSocket(port);
 		sm.getWebPage(address, port);
 	}
 }
