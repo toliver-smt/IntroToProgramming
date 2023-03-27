@@ -28,7 +28,7 @@ public class WebManager {
 			//create output stream
 			DataOutputStream out = new DataOutputStream(socket.getOutputStream());
 			
-			//create input stream and wrap in in buffered reader
+			//create input stream and wrap it in buffered reader
 			InputStreamReader inputStreamReader = new InputStreamReader(socket.getInputStream());
 			BufferedReader in = new BufferedReader(inputStreamReader);
 			
