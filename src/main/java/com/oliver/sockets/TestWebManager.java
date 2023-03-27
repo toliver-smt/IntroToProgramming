@@ -2,7 +2,7 @@ package com.oliver.sockets;
 /****************************************************************************
  * <b>Title</b>TestWebManager.java<p/>
  * <b>Description: Instantiates WebManager and calls the
- * printWebPage method with example arguments</b> 
+ * printWebPageHTML method with example arguments</b> 
  * <p/>
  * <b>Copyright:</b> Copyright (c) 2023<p/>
  * <b>Company:</b> Silicon Mountain Technologies<p/>
@@ -34,7 +34,7 @@ public class TestWebManager {
 	 */
 	public void process() {
 		WebManager wm = new WebManager();
-		wm.printWebPage(HOST, PORT_NUMBER);
+		wm.printWebPageHTML(HOST, PORT_NUMBER);
 	}
 
 }

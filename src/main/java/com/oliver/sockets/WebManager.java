@@ -21,18 +21,29 @@ public class WebManager {
 	 * @param host
 	 * @param portNumber
 	 */
-	public void printWebPage(String host, int portNumber) {
-		StringBuilder html = new StringBuilder();
+	public void printWebPageHTML(String host, int portNumber) {
+		//create socket within try-with-resources so it closes
 		try (Socket socket = new Socket(host, portNumber)) {
+			
+			//create output stream
 			DataOutputStream out = new DataOutputStream(socket.getOutputStream());
+			
+			//create input stream and wrap in in buffered reader
 			InputStreamReader inputStreamReader = new InputStreamReader(socket.getInputStream());
 			BufferedReader in = new BufferedReader(inputStreamReader);
-			out.writeBytes("GET /\r\n");
+			
+			//write the GET request to the output stream
+			//must end in carriage return "\r" and a newline "/n"
+			out.writeBytes("GET / HTTP/1.1\r\n");
+			out.writeBytes("Host: " + host + "\r\n\r\n");
+			
+			//while loop that prints each line read
 			String inData = null;
 			while((inData = in.readLine()) != null) {
-				html.append("\n" + inData);
+				System.out.println(inData);
 			}
-			System.out.println(html);
+			
+			//catch block
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
